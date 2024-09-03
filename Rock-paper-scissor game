@@ -1,0 +1,22 @@
+import random
+print("Instructions: \nTo choose rock type 0 \nTo choose paper choose 1 \nTo choose Scissor choose 2\n\n")
+rock=0
+paper=1
+scissor=2
+computer=random.randint(0,2)
+user_ip=int(input("select your choice"))
+print("computer choice is ",computer)
+if computer==user_ip:
+    print("draw")
+elif computer==0 and user_ip==1:
+    print("you win")
+elif computer == 1 and user_ip == 0:
+    print("you lost")
+elif computer == 1 and user_ip == 2:
+    print("you win")
+elif computer == 2 and user_ip == 1:
+    print("you lost")
+elif computer == 2 and user_ip == 0:
+    print("you win")
+elif computer == 0 and user_ip == 2:
+    print("you lost")
