@@ -1,0 +1,18 @@
+def maxarray(arr,n):
+    a=arr[0]
+    for i in arr:
+        if i>a:
+            a=i
+    return a
+
+n=int(input("enter the size of array"))
+arr=[]
+for i in range(n):
+    b=int(input("enter elements"))
+    arr.append(b)
+print("array is",arr)
+m=maxarray(arr,n)
+print("largest value is ",m)
+print("largest index is",arr.index(m))
+
+
