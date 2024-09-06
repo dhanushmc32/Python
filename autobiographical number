@@ -1,0 +1,19 @@
+def autocount(n):
+    b=0
+
+    for i in range(0,len(n)):
+        if n.count(str(i))==int(n[i]):
+            a=1
+        else:
+            b+=1
+    l=[]
+    if b>0:
+        return 0
+    else:
+        for i in n:
+            if i not in l:
+                l.append(i)
+            else:continue
+        a=len(l)
+        return a
+print(autocount("6210001000"))
