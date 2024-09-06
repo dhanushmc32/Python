@@ -1,0 +1,23 @@
+def base(n,number):
+    d=dict()
+    ans=""
+    for i in range(1,10):
+        d[i]=i
+    l="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    j=0
+    for i in range(10,36):
+        d[i]=l[j]
+        j+=1
+    r=number%n
+    number=number//n
+    ans+=str(d[r])
+    while(r>0):
+        r=number%n
+        number//=n
+        if r==0:break
+        ans+=str(d[r])
+    ans=ans[::-1]
+    return ans
+n=int(input("enter n"))
+number=int(input("enter number"))
+print(base(n,number))
