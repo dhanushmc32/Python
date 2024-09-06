@@ -1,0 +1,10 @@
+def CalculateCards(n):
+ ans=0
+ level=1
+ while(level<=n):
+    ans+=(level*3)
+    level+=1
+ ans-=n
+ return ans
+
+print(CalculateCards(3))
