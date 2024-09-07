@@ -1,0 +1,17 @@
+def rev(arr,s,e):
+    while(s<e):
+        arr[s],arr[e]=arr[e],arr[s]
+        s+=1
+        e-=1
+    return arr
+def rotate(n,arr,d):
+    n=len(arr)
+    d=d%n
+    rev(arr,n-d,n-1)
+    rev(arr,0,n-d-1)
+    rev(arr,0,n-1)
+    return arr
+arr=[1,2,3,4,5,6,7]
+d=4
+n=len(arr)
+print(rotate(n,arr,d))
