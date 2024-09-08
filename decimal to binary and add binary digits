@@ -1,0 +1,10 @@
+def dectobin(n):
+    c=0
+    while(n>=1):
+        a=str(n%2)
+        c+=int(a)
+        n=n//2
+    return c
+        
+
+print(dectobin(10))
