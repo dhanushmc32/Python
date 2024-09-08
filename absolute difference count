@@ -1,0 +1,13 @@
+def absolutediff(arr,num,diff):
+    count =0
+    for i in arr:
+        for j in range(0,diff+1):
+            if num+j==i:
+                count+=1
+            elif num-j==i:
+                count+=1
+    if count==0:
+        return -1
+    return count
+arr=[12,3,14,56,77,13,14,11]
+print(absolutediff(arr,13,2))
