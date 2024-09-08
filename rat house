@@ -1,0 +1,19 @@
+def rathouse(r,unit,n,arr):
+    food_req=r*unit
+    sum1=0
+    count=0
+    i=0
+    while(sum1<food_req and i<len(arr)):
+        sum1+=arr[i]
+        i+=1
+    
+    if len(arr)==0:
+        return -1
+    if sum(arr)<food_req:
+        return 0
+    return i
+r=7
+unit=2
+n=8
+arr=[1,1,1,1,1,1,1,7]
+print(rathouse(r,unit,n,arr))
