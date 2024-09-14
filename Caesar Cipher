@@ -1,0 +1,64 @@
+# Define the alphabet list to use in the encryption and decryption process
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+           'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+           'y', 'z']
+
+def encryption(plain_text, shift_key):
+    """Encrypts the given plain_text using a Caesar cipher with the provided shift_key."""
+    cipher_text = ""
+    for char in plain_text:
+        if char in alphabet:
+            # Find the current position of the character in the alphabet
+            position = alphabet.index(char)
+            # Compute the new position with the shift, wrapping around using modulo
+            new_position = (position + shift_key) % 26
+            # Append the character at the new position to the cipher_text
+            cipher_text += alphabet[new_position]
+        else:
+            # If the character is not in the alphabet (e.g., punctuation), add it unchanged
+            cipher_text += char
+
+    # Print the encrypted text
+    print("Here is the text after encryption:", cipher_text)
+
+def decryption(plain_text, shift_key):
+    """Decrypts the given plain_text using a Caesar cipher with the provided shift_key."""
+    cipher_text = ""
+    for char in plain_text:
+        if char in alphabet:
+            # Find the current position of the character in the alphabet
+            position = alphabet.index(char)
+            # Compute the new position by reversing the shift, wrapping around using modulo
+            new_position = (position - shift_key) % 26
+            # Append the character at the new position to the cipher_text
+            cipher_text += alphabet[new_position]
+        else:
+            # If the character is not in the alphabet (e.g., punctuation), add it unchanged
+            cipher_text += char
+
+    # Print the decrypted text
+    print("Here is the text after decryption:", cipher_text)
+
+# Variable to control the loop
+wanna_end = False
+
+# Main loop to allow the user to choose between encryption and decryption
+while not wanna_end:
+    # Prompt the user to choose between encryption and decryption
+    what_to_do = input("Type 'encrypt' for encryption, type 'decrypt' for decryption: ")
+    # Prompt the user to enter the message
+    text = input("Type your message:\n")
+    # Prompt the user to enter the shift key
+    shift = int(input("Enter your shift key: "))
+    
+    # Perform encryption or decryption based on the user's choice
+    if what_to_do == "encrypt":
+        encryption(plain_text=text, shift_key=shift)
+    elif what_to_do == "decrypt":
+        decryption(plain_text=text, shift_key=shift)
+    
+    # Ask the user if they want to continue or exit
+    user = input("To continue type 'yes', to exit type 'no': ")
+    if user == "no":
+        # Set the flag to True to exit the loop
+        wanna_end = True
