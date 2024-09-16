@@ -1,0 +1,29 @@
+# Initialize the game flag to control the loop
+game = False
+
+# Initialize an empty dictionary to store bids
+a = {}
+
+# Start a loop to collect bids until the user decides to stop
+while game is not True:
+    # Prompt the user to enter the bidder's name
+    b = input("Enter the bidder name: ")
+    
+    # Prompt the user to enter the bid amount and convert it to an integer
+    c = int(input("Enter the bidding amount: "))
+    
+    # Store the bid amount as the key and the bidder's name as the value in the dictionary
+    a[c] = b
+    
+    # Ask the user if they want to continue or stop
+    c = input("To continue type 'yes', else type 'no': ").strip().lower()
+    
+    # If the user types 'no', set the game flag to True to exit the loop
+    if c == "no":
+        game = True
+
+# After the loop ends, find the maximum bid amount
+m = max(a.keys())
+
+# Print the highest bid amount and the corresponding bidder's name
+print(f"Maximum bidding is for {a[m]} for an amount of {m}")
